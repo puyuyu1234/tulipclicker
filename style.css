@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.game-container {
+    margin-top: 50px;
+}
+
+.tulip {
+    margin: auto;
+    font-size: 150px;
+    width: 200px;
+    background-size: cover;
+    cursor: pointer;
+    border:1px solid black;
+}
+
+.score {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#shop {
+    margin: auto;
+    font-size: 30px;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+*{
+    --border:1px solid black;
+}
