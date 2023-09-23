@@ -44,6 +44,7 @@ function getCookie() {
 const shopTable = document.getElementById("shop")
 let upgrades = [
     ["🥺", 10, 1.1, 1],
+    ["🤶", 100, 1.1, 10],
 ]
 let numItems = new Array(upgrades.length).fill(0)
 let sps = 0
@@ -56,21 +57,22 @@ function init() {
 }
 
 function makeLayout() {
-    let tr = document.createElement("tr")
-    shopTable.appendChild(tr)
     for(let id in upgrades){
+        let tr = document.createElement("tr")
+        shopTable.appendChild(tr)
         let item = upgrades[id]
         let td = document.createElement("td")
         let cost = (item[1] * item[2] ** numItems[id]) | 0
+        td.id = "item" + id
         td.className = "item noselect"
-        td.textContent = item[0] + "x" + numItems[id] + ", cost:" + cost
+        td.textContent = item[0] + "x" + numItems[id] + ", cost:" + cost + ", 🌷+" + item[3]
         td.addEventListener("click", function() {
             if (score >= cost){
                 score -= cost
                 numItems[id]++
                 cost = (item[1] * item[2] ** numItems[id]) | 0
                 calcSps()
-                td.textContent = item[0] + "x" + numItems[id] + ", cost:" + cost
+                td.textContent = item[0] + "x" + numItems[id] + ", cost:" + cost + ", 🌷+" + item[3]
                 document.getElementById("score-value").textContent = score;
             }
         })
@@ -91,10 +93,25 @@ function calcSps() {
     return
 }
 
+function makeShop() {
+    for(let id in upgrades){
+        let item = upgrades[id]
+        let cost = (item[1] * item[2] ** numItems[id]) | 0
+        
+        let td = document.getElementById("item" + id)
+        if(score >= cost){
+            td.className = "item noselect"
+        }else{
+            td.className = "item noselect gray"
+        }
+        
+    }
+}
+
 function loop() {
-    score += sps
+    score += sps / 10 | 0
     
-    
+    makeShop()
     document.getElementById("score-value").textContent = score;
 }
 
@@ -102,5 +119,5 @@ function loop() {
 
 window.onload = function () {
     init()
-    setInterval(loop, 1000)
+    setInterval(loop, 100)
 }
