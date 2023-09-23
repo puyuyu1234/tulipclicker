@@ -21,7 +21,7 @@ body {
     margin-top: 20px;
 }
 
-#shop {
+table {
     margin: auto;
     font-size: 30px;
 }
@@ -54,4 +54,34 @@ html {
 
 .gray {
     background-color: gray;
+}
+
+
+
+
+
+@keyframes fuwafuwa {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.anime-fuwafuwa {
+  animation: 3s fuwafuwa infinite;
+}
+
+@keyframes yurayura {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+}
+
+.anime-yurayura {
+  animation: 10s yurayura infinite;
 }
