@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>tulipclicker</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>tulipclicker</title>
-<link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <button id="save">save</button>
+        <div class="game-container">
+            <div class="tulip noselect" id="tulip">🌷</div>
+            <div class="score" id="score">🌷: <span id="score-value">0</span></div>
+            <div class="sps">🌷/s: <span id="sps-value">0</span></div>
+            <div class="spc">🌷/👆: <span id="spc-value">0</span></div>
 
-<body>
+            <h1>SHOP</h1>
+            <table border="1" id="shop"></table>
 
-<button id="save">save</button>
-<div class="game-container">
-<div class="tulip noselect" id="tulip">🌷</div>
-<div class="score" id="score">🌷: <span id="score-value">0</span></div>
-<div class="sps">🌷/s: <span id="sps-value">0</span></div>
-<div class="spc">🌷/👆: <span id="spc-value">0</span></div>
+            <h1>UPGRADE</h1>
+            <table border="1" id="upgrade"></table>
+        </div>
 
-<h1>SHOP</h1>
-<table border=1 id="shop">
-</table>
-
-<h1>UPGRADE</h1>
-<table border=1 id="upgrade">
-</table>
-</div>
-
-<script src="script.js"></script>
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>
